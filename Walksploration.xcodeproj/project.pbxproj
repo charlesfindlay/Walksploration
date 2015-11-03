@@ -13,6 +13,7 @@
 		3F15BB741BE8FA0C00E03314 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F15BB731BE8FA0C00E03314 /* Assets.xcassets */; };
 		3F15BB771BE8FA0C00E03314 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F15BB751BE8FA0C00E03314 /* LaunchScreen.storyboard */; };
 		3FFAC5D41BE90DA1001BD611 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFAC5D31BE90DA1001BD611 /* TabBarController.swift */; };
+		AB3E9F6F5DF534D4A5103814 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 73DEF047452D8BB9609FDCEC /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +24,11 @@
 		3F15BB731BE8FA0C00E03314 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F15BB761BE8FA0C00E03314 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F15BB781BE8FA0C00E03314 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F22ECE61BE910370051324A /* Walksploration-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Walksploration-Bridging-Header.h"; sourceTree = "<group>"; };
 		3FFAC5D31BE90DA1001BD611 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		73DEF047452D8BB9609FDCEC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8537B359299B6028CE1F09E0 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		E44DF11D86EC652228AFDD74 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB3E9F6F5DF534D4A5103814 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +48,8 @@
 			children = (
 				3F15BB6B1BE8FA0B00E03314 /* Walksploration */,
 				3F15BB6A1BE8FA0B00E03314 /* Products */,
+				D50C4D75A2F2AF0F3F84E98A /* Pods */,
+				D3EC7E0525ABB8D6DAABA901 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,6 +70,7 @@
 				3F15BB731BE8FA0C00E03314 /* Assets.xcassets */,
 				3F15BB751BE8FA0C00E03314 /* LaunchScreen.storyboard */,
 				3F15BB781BE8FA0C00E03314 /* Info.plist */,
+				3F22ECE61BE910370051324A /* Walksploration-Bridging-Header.h */,
 			);
 			path = Walksploration;
 			sourceTree = "<group>";
@@ -75,6 +84,23 @@
 			name = Controllers;
 			sourceTree = "<group>";
 		};
+		D3EC7E0525ABB8D6DAABA901 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				73DEF047452D8BB9609FDCEC /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D50C4D75A2F2AF0F3F84E98A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8537B359299B6028CE1F09E0 /* Pods.debug.xcconfig */,
+				E44DF11D86EC652228AFDD74 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -82,9 +108,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3F15BB7B1BE8FA0C00E03314 /* Build configuration list for PBXNativeTarget "Walksploration" */;
 			buildPhases = (
+				CDFC9D81F5CEEF3C08887605 /* Check Pods Manifest.lock */,
 				3F15BB651BE8FA0B00E03314 /* Sources */,
 				3F15BB661BE8FA0B00E03314 /* Frameworks */,
 				3F15BB671BE8FA0B00E03314 /* Resources */,
+				39EE06BCF8B89C95AAA3B229 /* Embed Pods Frameworks */,
+				6DDA592A09717E422BFEDEA7 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -140,6 +169,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		39EE06BCF8B89C95AAA3B229 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6DDA592A09717E422BFEDEA7 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CDFC9D81F5CEEF3C08887605 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3F15BB651BE8FA0B00E03314 /* Sources */ = {
@@ -257,23 +334,30 @@
 		};
 		3F15BB7C1BE8FA0C00E03314 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8537B359299B6028CE1F09E0 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Walksploration/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.charlesfindlay.Walksploration;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Walksploration/Walksploration-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		3F15BB7D1BE8FA0C00E03314 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E44DF11D86EC652228AFDD74 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Walksploration/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.charlesfindlay.Walksploration;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Walksploration/Walksploration-Bridging-Header.h";
 			};
 			name = Release;
 		};
