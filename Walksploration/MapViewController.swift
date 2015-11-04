@@ -20,8 +20,22 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ConstrainMap()
         
-        let camera: GMSCameraPosition = GMSCameraPosition.cameraWithLatitude(42.3367182, longitude: -83.0525951, zoom: 16)
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
+    
+    // MARK: - Utility Methods
+    
+    func ConstrainMap() {
+        
+        let camera: GMSCameraPosition = GMSCameraPosition.cameraWithLatitude(42.335890, longitude: -83.0499, zoom: 16)
         self.mapView = GMSMapView(frame: self.mapViewContainer.frame)
         self.mapView.camera = camera
         self.mapView.myLocationEnabled = true
@@ -29,15 +43,30 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         self.view.addSubview(mapView)
         
         let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2DMake(42.3358794, -83.0519393)
+        marker.position = CLLocationCoordinate2DMake(42.335890, -83.0499)
         marker.title = "Start"
         marker.snippet = "Grand Circus"
         marker.map = mapView
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        mapViewContainer.backgroundColor = UIColor(red: 135/255, green: 222/255, blue: 212/255, alpha: 1)
+        // add subview before adding constraints
+        self.view.addSubview(mapViewContainer)
+        
+        // essential to apply NSLayoutConstraints programatically
+        mapViewContainer.translatesAutoresizingMaskIntoConstraints = false
+        
+        // trailing margin constraint
+        let const1 = NSLayoutConstraint(item: view, attribute: NSLayoutAttribute.TrailingMargin, relatedBy: NSLayoutRelation.Equal, toItem: mapViewContainer, attribute: NSLayoutAttribute.TrailingMargin, multiplier: 1, constant: -10)
+        // top constraint
+        let const2 = NSLayoutConstraint(item: mapViewContainer, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem:topLayoutGuide, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0)
+        // bottom constraint
+        let const3 = NSLayoutConstraint(item: bottomLayoutGuide, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem:mapViewContainer, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 150)
+        // leading margin constraint
+        let const4 = NSLayoutConstraint(item: mapViewContainer, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem:self.view, attribute: NSLayoutAttribute.LeadingMargin, multiplier: 1, constant: -15)
+        
+        NSLayoutConstraint.activateConstraints([const1, const2, const3, const4])
+        
+        
     }
     
     
