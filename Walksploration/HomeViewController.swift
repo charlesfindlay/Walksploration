@@ -30,6 +30,7 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func findDestinationButton(sender: AnyObject) {
+        performSegueWithIdentifier("getWalkingSegue", sender: sender)
     }
     
     @IBAction func chooseMinutesSlider(sender: AnyObject) {

@@ -25,15 +25,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fQF-gw-veS">
-                                <rect key="frame" x="196" y="367" width="208" height="66"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="Find a Destination"/>
-                                <connections>
-                                    <action selector="findDestinationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c15-Rx-q9o"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="How long do you want to walk?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3bq-iT-R24">
                                 <rect key="frame" x="182" y="221" width="236" height="21"/>
                                 <animations/>
@@ -48,15 +39,24 @@
                                     <action selector="chooseMinutesSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="q97-ou-j5K"/>
                                 </connections>
                             </slider>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Minutes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DTA-H0-Xu2">
-                                <rect key="frame" x="309" y="338" width="61" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minutes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DTA-H0-Xu2">
+                                <rect key="frame" x="270" y="367" width="61" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XPf-Cs-lWC">
-                                <rect key="frame" x="241" y="338" width="42" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fQF-gw-veS">
+                                <rect key="frame" x="192" y="426" width="208" height="66"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Find a Destination"/>
+                                <connections>
+                                    <action selector="findDestinationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c15-Rx-q9o"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XPf-Cs-lWC">
+                                <rect key="frame" x="279" y="338" width="42" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -69,9 +69,15 @@
                             <constraint firstItem="K30-xg-7l8" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="7eh-JD-T6w"/>
                             <constraint firstItem="K30-xg-7l8" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="DIN-bZ-JMe"/>
                             <constraint firstItem="3bq-iT-R24" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Fmd-ee-iv9"/>
+                            <constraint firstItem="DTA-H0-Xu2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="InY-Q4-3k1"/>
+                            <constraint firstItem="XPf-Cs-lWC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Sl1-Fy-xQA"/>
+                            <constraint firstItem="fQF-gw-veS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Zbs-YE-YPV"/>
                             <constraint firstItem="qr3-HO-B7g" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="gMh-ep-ZPh"/>
                             <constraint firstItem="K30-xg-7l8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="gwd-5O-xcK"/>
+                            <constraint firstItem="DTA-H0-Xu2" firstAttribute="top" secondItem="XPf-Cs-lWC" secondAttribute="bottom" constant="8" id="hNM-hV-SbT"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fQF-gw-veS" secondAttribute="bottom" constant="108" id="iL1-pu-Nai"/>
                             <constraint firstItem="fQF-gw-veS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iL5-64-Ii1"/>
+                            <constraint firstItem="XPf-Cs-lWC" firstAttribute="top" secondItem="qr3-HO-B7g" secondAttribute="bottom" constant="23" id="tsH-XO-LTZ"/>
                             <constraint firstItem="qr3-HO-B7g" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zl8-13-WNt"/>
                         </constraints>
                     </view>
@@ -79,14 +85,14 @@
                     <connections>
                         <outlet property="numberMinutesLabel" destination="XPf-Cs-lWC" id="822-6y-Wv5"/>
                         <outlet property="sliderOutlet" destination="qr3-HO-B7g" id="CQ5-03-tKJ"/>
-                        <segue destination="rtM-vI-SPU" kind="push" id="qac-TO-a8f"/>
+                        <segue destination="rtM-vI-SPU" kind="push" identifier="getWalkingSegue" id="qac-TO-a8f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1013" y="989"/>
         </scene>
-        <!--Item 2-->
+        <!--Previous-->
         <scene sceneID="llg-8R-vlt">
             <objects>
                 <viewController id="3Cr-Fe-0y8" sceneMemberID="viewController">
@@ -100,16 +106,16 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="ldy-8x-j17"/>
+                    <tabBarItem key="tabBarItem" title="Previous" id="ldy-8x-j17"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CSU-S6-a4i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2525" y="1362"/>
         </scene>
-        <!--Item 1-->
+        <!--Walk-->
         <scene sceneID="oky-XM-upp">
             <objects>
-                <viewController id="cEO-Xz-g6z" sceneMemberID="viewController">
+                <viewController id="cEO-Xz-g6z" customClass="MapViewController" customModule="Walksploration" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IuR-Oh-fZj"/>
                         <viewControllerLayoutGuide type="bottom" id="l0W-SE-Km7"/>
@@ -117,10 +123,24 @@
                     <view key="view" contentMode="scaleToFill" id="WXn-Ay-rI1">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wjw-f6-Saj">
+                                <rect key="frame" x="150" y="150" width="300" height="300"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="T7M-lJ-vfS"/>
+                                    <constraint firstAttribute="height" constant="300" id="mEr-Ih-iZe"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="2OH-Hc-8Nm"/>
+                    <tabBarItem key="tabBarItem" title="Walk" id="2OH-Hc-8Nm"/>
+                    <connections>
+                        <outlet property="mapViewContainer" destination="Wjw-f6-Saj" id="Kh4-9c-hcs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H1J-Ml-7xn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
