@@ -125,17 +125,45 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wjw-f6-Saj">
-                                <rect key="frame" x="150" y="150" width="300" height="300"/>
+                                <rect key="frame" x="150" y="89" width="300" height="56"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nv2-9w-WPn">
+                                <rect key="frame" x="279" y="362" width="42" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y2h-Xp-UbX">
+                                <rect key="frame" x="185" y="441" width="230" height="100"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.37153967199999999" green="0.73995817549999998" blue="0.33165801490000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Pws-Pn-SZg"/>
+                                    <constraint firstAttribute="width" constant="230" id="ZEF-DN-oHr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="Start Walk">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopWatchToggle:" destination="cEO-Xz-g6z" eventType="touchUpInside" id="7yU-3C-GJ4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Y2h-Xp-UbX" firstAttribute="centerX" secondItem="WXn-Ay-rI1" secondAttribute="centerX" id="j8V-Kg-U6j"/>
+                            <constraint firstItem="l0W-SE-Km7" firstAttribute="top" secondItem="Y2h-Xp-UbX" secondAttribute="bottom" constant="10" id="nzT-N2-xUI"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Walk" id="2OH-Hc-8Nm"/>
                     <connections>
                         <outlet property="mapViewContainer" destination="Wjw-f6-Saj" id="Kh4-9c-hcs"/>
+                        <outlet property="stopWatchButton" destination="Y2h-Xp-UbX" id="m85-eT-Wm9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H1J-Ml-7xn" userLabel="First Responder" sceneMemberID="firstResponder"/>

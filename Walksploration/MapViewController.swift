@@ -13,6 +13,9 @@ import GoogleMaps
 class MapViewController: UIViewController, GMSMapViewDelegate {
     
 
+    
+    @IBOutlet weak var stopWatchButton: UIButton!
+    
     var mapView: GMSMapView!
     let mapTasks = MapTasks()
     var routePolyline: GMSPolyline!
@@ -30,18 +33,30 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
                 dispatch_async(dispatch_get_main_queue(), {
                     self.drawRoute()
                 })
-                
-                
-                
+               
+            } else {
+                print("Charles, your code sucks! Get a new career. o_O")
             }
         }
-        //routePolyline.map = mapView
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    @IBAction func stopWatchToggle(sender: AnyObject) {
+        if stopWatchButton.titleLabel?.text == "Start Walk" {
+            stopWatchButton.setTitle("Pause", forState: .Normal)
+            stopWatchButton.backgroundColor =  UIColor.redColor()
+        } else {
+            
+        }
+        
+        
+    }
+    
     
     
     
