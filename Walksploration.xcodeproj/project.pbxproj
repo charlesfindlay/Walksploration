@@ -12,6 +12,7 @@
 		3F15BB721BE8FA0C00E03314 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F15BB701BE8FA0C00E03314 /* Main.storyboard */; };
 		3F15BB741BE8FA0C00E03314 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F15BB731BE8FA0C00E03314 /* Assets.xcassets */; };
 		3F15BB771BE8FA0C00E03314 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F15BB751BE8FA0C00E03314 /* LaunchScreen.storyboard */; };
+		3F17DBE31BEBB5E100F055B7 /* MapTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F17DBE21BEBB5E100F055B7 /* MapTasks.swift */; };
 		3F22ECEA1BE9240B0051324A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F22ECE91BE9240B0051324A /* MapViewController.swift */; };
 		3FFAC5D41BE90DA1001BD611 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFAC5D31BE90DA1001BD611 /* TabBarController.swift */; };
 		AB3E9F6F5DF534D4A5103814 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 73DEF047452D8BB9609FDCEC /* libPods.a */; };
@@ -25,6 +26,7 @@
 		3F15BB731BE8FA0C00E03314 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F15BB761BE8FA0C00E03314 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F15BB781BE8FA0C00E03314 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F17DBE21BEBB5E100F055B7 /* MapTasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapTasks.swift; sourceTree = "<group>"; };
 		3F22ECE61BE910370051324A /* Walksploration-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Walksploration-Bridging-Header.h"; sourceTree = "<group>"; };
 		3F22ECE91BE9240B0051324A /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		3FFAC5D31BE90DA1001BD611 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 				3F15BB751BE8FA0C00E03314 /* LaunchScreen.storyboard */,
 				3F15BB781BE8FA0C00E03314 /* Info.plist */,
 				3F22ECE61BE910370051324A /* Walksploration-Bridging-Header.h */,
+				3F17DBE21BEBB5E100F055B7 /* MapTasks.swift */,
 			);
 			path = Walksploration;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FFAC5D41BE90DA1001BD611 /* TabBarController.swift in Sources */,
+				3F17DBE31BEBB5E100F055B7 /* MapTasks.swift in Sources */,
 				3F15BB6F1BE8FA0C00E03314 /* HomeViewController.swift in Sources */,
 				3F15BB6D1BE8FA0C00E03314 /* AppDelegate.swift in Sources */,
 				3F22ECEA1BE9240B0051324A /* MapViewController.swift in Sources */,

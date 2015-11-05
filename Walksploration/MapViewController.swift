@@ -8,20 +8,26 @@
 
 import UIKit
 import CoreLocation
+import GoogleMaps
 
 class MapViewController: UIViewController, GMSMapViewDelegate {
     
 
     var mapView: GMSMapView!
+    let mapTasks = MapTasks()
     
     @IBOutlet weak var mapViewContainer: UIView!
     
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         ConstrainMap()
-        
+        mapTasks.getDirections("42.335890,-83.0499", destination: "42.332271,-83.0468119", waypoints: nil, travelMode: "") { (status, success) -> Void in
+            if success {
+                print("Awesome Job!")
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
