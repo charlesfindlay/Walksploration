@@ -15,6 +15,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
 
     var mapView: GMSMapView!
     let mapTasks = MapTasks()
+    var routePolyline: GMSPolyline!
     
     @IBOutlet weak var mapViewContainer: UIView!
     
@@ -26,8 +27,15 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         mapTasks.getDirections("42.335890,-83.0499", destination: "42.332271,-83.0468119", waypoints: nil, travelMode: "") { (status, success) -> Void in
             if success {
                 print("Awesome Job!")
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.drawRoute()
+                })
+                
+                
+                
             }
         }
+        //routePolyline.map = mapView
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,6 +46,15 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     
     
     // MARK: - Utility Methods
+    
+    func drawRoute() {
+        let route = mapTasks.overviewPolyline["points"] as! String
+        
+        let path: GMSPath = GMSPath(fromEncodedPath: route)
+        self.routePolyline = GMSPolyline(path: path)
+        routePolyline.map = mapView
+    }
+    
     
     func ConstrainMap() {
         

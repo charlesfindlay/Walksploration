@@ -13,11 +13,14 @@ class MapTasks {
     
     
     let baseURLDirections = "https://maps.googleapis.com/maps/api/directions/json?"
+    var overviewPolyline: Dictionary<NSObject, AnyObject>!
+
     
     
     
     
     func getDirections(origin: String!, destination: String!, waypoints: Array<String>!, travelMode: String, completionHandler: ((status: String, success: Bool) -> Void)) {
+        
         
         let session = NSURLSession.sharedSession()
         
@@ -44,6 +47,7 @@ class MapTasks {
                     /* GUARD: Was there an error? */
                     guard (error == nil) else {
                         print("There was an error with your request: \(error)")
+                        completionHandler(status: "", success: false)
                         return
                     }
                     
@@ -74,38 +78,59 @@ class MapTasks {
                         print("Could not parse the data as JSON: '\(data)'")
                         return
                     }
-                    /* GUARD: Is "hits" key in our result? */
-                    guard let directionResults = parsedResult["routes"] as? NSArray else {
-                        print("Cannot find keys 'routes' in \(parsedResult)")
+                    
+                    // Check if status returned OK
+                    guard let status = parsedResult["status"] as? String else {
+                        print("Status not OK)")
                         return
                     }
                     
-                    let route = directionResults[0]
-                    print("route nodes")
-                    print(route.count)
+                    if status == "OK" {
                     
-                    guard let legs = route["legs"] else {
-                        print("no route legs")
-                        return
-                    }
-                    
-                    print("leg nodes")
-                    print(legs!.count)
-                    
-                    guard let steps = legs![0]["steps"] else {
-                        print("no route leg steps")
-                        return
-                    }
-                    
-                    print("step nodes")
-                    print(steps!.count)
-                    
-                    
-                    
-                    dispatch_async(dispatch_get_main_queue(), {
+                        /* GUARD: Is "hits" key in our result? */
+                        guard let directionResults = parsedResult["routes"] as? NSArray else {
+                            print("Cannot find keys 'routes' in \(parsedResult)")
+                            return
+                        }
                         
-                    }) // End dispatch_async
+                        let route = directionResults[0]
+                        print("route nodes")
+                        print(route.count)
+                        
+                        guard let legs = route["legs"] else {
+                            print("no route legs")
+                            return
+                        }
+                        
+                        print("leg nodes")
+                        print(legs!.count)
+                        
+                        guard let steps = legs![0]["steps"] else {
+                            print("no route leg steps")
+                            return
+                        }
+                        
+                        print("step nodes")
+                        print(steps!.count)
+                        
+                        // Do some stuff here
+                        self.overviewPolyline = route["overview_polyline"] as! Dictionary<NSObject, AnyObject>
+                        
+                        
+                        dispatch_async(dispatch_get_main_queue(), {
+                            
+                        }) // End dispatch_async
+                        
+                        
+                        
+                        completionHandler(status: status, success: true)
+                        
+                    } else {
+                        completionHandler(status: status, success: false)
+                    }
+                    
                 } // End task
+                
                 
                 task.resume()
                 
