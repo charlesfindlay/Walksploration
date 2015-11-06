@@ -37,7 +37,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
             } else {
                 print("Charles, your code sucks! Get a new career. o_O")
             }
-        }
+        } // End getDirections
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,10 +48,20 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     
     @IBAction func stopWatchToggle(sender: AnyObject) {
         if stopWatchButton.titleLabel?.text == "Start Walk" {
-            stopWatchButton.setTitle("Pause", forState: .Normal)
+            stopWatchButton.setTitle("End Walk", forState: .Normal)
             stopWatchButton.backgroundColor =  UIColor.redColor()
-        } else {
+        } else if stopWatchButton.titleLabel?.text == "End Walk" {
+            // TODO: will need anohter if statement to check for remaining walk time. If within 15% of end time then go to Facebook push. For now just implement Facebook push.
             
+            let facebookAlert = UIAlertController(title: "Share with your Friends", message: "Let all your friends now about your walk on Facebook", preferredStyle: .Alert)
+            let declineAction = UIAlertAction(title: "Decline", style: .Cancel, handler: nil)
+            let acceptAction = UIAlertAction(title: "Accept", style: .Default, handler: { (_) -> Void in
+                print("It's time to get the Facebook stuff working")
+            })
+            facebookAlert.addAction(declineAction)
+            facebookAlert.addAction(acceptAction)
+            presentViewController(facebookAlert, animated: true, completion: nil)
+            stopWatchButton.enabled = false
         }
         
         
