@@ -14,14 +14,14 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var numberMinutesLabel: UILabel!
     @IBOutlet weak var sliderOutlet: UISlider!
     
-    var detroitDestinations = NSDictionary()
     var destinations: [Destination] = []
     let myLocation = CLLocation(latitude: 42.335890, longitude: -83.0499)
+    var myMinutes: Float!
     
     
     override func viewWillAppear(animated: Bool) {
         // Set destinations dictionary
-        detroitDestinations = getDestinations()
+        let detroitDestinations = getDestinations()
         
         for (key,value) in detroitDestinations {
         
@@ -52,8 +52,17 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func chooseMinutesSlider(sender: AnyObject) {
-        let myMinutes = round(sliderOutlet.value)
+        myMinutes = round(sliderOutlet.value)
         numberMinutesLabel.text = String(myMinutes)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "getWalkingSegue" {
+            let vc = segue.destinationViewController as! TabBarController
+            vc.myLocation = self.myLocation
+            vc.myMinutes = self.myMinutes
+            vc.destinations = self.destinations
+        }
     }
     
     
@@ -75,4 +84,3 @@ class HomeViewController: UIViewController {
 
 
 }
-

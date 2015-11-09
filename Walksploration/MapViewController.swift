@@ -19,6 +19,10 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     var mapView: GMSMapView!
     let mapTasks = MapTasks()
     var routePolyline: GMSPolyline!
+    var destinations: [Destination]!
+    var myLocation: CLLocation?
+    var myMinutes: Float?
+    var choosenDestination: CLLocation?
     
     @IBOutlet weak var mapViewContainer: UIView!
     
@@ -26,20 +30,14 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let tbvc = self.tabBarController as? TabBarController
+        destinations = tbvc!.destinations
+        myLocation = tbvc!.myLocation
+        myMinutes =  tbvc!.myMinutes
+        
         ConstrainMap()
-        // 42.335025,-83.059389 MGM Casino
-        // 42.332271,-83.0468119 campus martius
-        mapTasks.getDirections("42.335890,-83.0499", destination: "42.335025,-83.059389", waypoints: nil, travelMode: "") { (status, success) -> Void in
-            if success {
-                print("Awesome Job!")
-                dispatch_async(dispatch_get_main_queue(), {
-                    self.drawRoute()
-                })
-               
-            } else {
-                print("Charles, your code sucks! Get a new career. o_O")
-            }
-        } // End getDirections
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,14 +53,14 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         } else if stopWatchButton.titleLabel?.text == "End Walk" {
             // TODO: will need anothter if statement to check for remaining walk time. If within 15% of end time then go to Facebook push. For now just implement Twitter push.
             
-            let facebookAlert = UIAlertController(title: "Share with your Friends", message: "Let all your friends now about your walk on Twitter", preferredStyle: .Alert)
+            let twitterAlert = UIAlertController(title: "Share with your Friends", message: "Let all your friends now about your walk on Twitter", preferredStyle: .Alert)
             let declineAction = UIAlertAction(title: "Decline", style: .Cancel, handler: nil)
             let acceptAction = UIAlertAction(title: "Accept", style: .Default, handler: { (_) -> Void in
                 self.twitterHandler()
             })
-            facebookAlert.addAction(declineAction)
-            facebookAlert.addAction(acceptAction)
-            presentViewController(facebookAlert, animated: true, completion: nil)
+            twitterAlert.addAction(declineAction)
+            twitterAlert.addAction(acceptAction)
+            presentViewController(twitterAlert, animated: true, completion: nil)
             stopWatchButton.enabled = false
         }
         
@@ -88,6 +86,26 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         }
         
     }
+    
+    
+    func getDirectionsFromGoogle() {
+        
+        mapTasks.getDirections("42.335890,-83.0499", destination: "42.335025,-83.059389", waypoints: nil, travelMode: "") { (status, success) -> Void in
+            if success {
+                print("Awesome Job!")
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.drawRoute()
+                })
+                
+            } else {
+                print("Charles, your code sucks! Get a new career. o_O")
+            }
+        } // End getDirections
+    }
+    
+    
+    
+    
     
     func drawRoute() {
         let route = mapTasks.overviewPolyline["points"] as! String

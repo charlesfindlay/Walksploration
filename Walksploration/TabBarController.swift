@@ -10,4 +10,8 @@ import UIKit
 
 class TabBarController: UITabBarController {
     
+    
+    var destinations: [Destination]?
+    var myLocation: CLLocation?
+    var myMinutes: Float?
 }
