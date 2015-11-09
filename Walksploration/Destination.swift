@@ -11,14 +11,12 @@ import Foundation
 class Destination {
     
     let name: String
-    let lat: Double
-    let long: Double
-    let distance: Double
+    let location: CLLocation
+    var distance: Double
     
-    init(name: String, lat: Double, long: Double) {
+    init(name: String, location: CLLocation) {
         self.name = name
-        self.lat = lat
-        self.long = long
+        self.location = location
         self.distance = 0.0
     }
     

@@ -16,7 +16,7 @@ class HomeViewController: UIViewController {
     
     var detroitDestinations = NSDictionary()
     var destinations: [Destination] = []
-    
+    let myLocation = CLLocation(latitude: 42.335890, longitude: -83.0499)
     
     
     override func viewWillAppear(animated: Bool) {
@@ -30,7 +30,9 @@ class HomeViewController: UIViewController {
             let name = key as! String
             let lat = coor["Lat"] as! Double
             let long = coor["Long"] as! Double
-            let newDestination = Destination(name: name, lat: lat, long: long)
+            let newLocation = CLLocation(latitude: lat, longitude: long)
+            let newDestination = Destination(name: name, location: newLocation)
+            newDestination.distance = getDistance(myLocation, nextDestination: newLocation)
             destinations.append(newDestination)
         }
     }
@@ -62,6 +64,13 @@ class HomeViewController: UIViewController {
         let destinationJson = parser.parsedDestinationJSON
         
         return destinationJson
+    }
+    
+    func getDistance(currentLocation: CLLocation, nextDestination: CLLocation) -> Double {
+        
+        let newDistance = currentLocation.distanceFromLocation(nextDestination)
+        
+        return newDistance
     }
 
 
