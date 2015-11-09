@@ -28,11 +28,10 @@ class HomeViewController: UIViewController {
             let coor = value as! [String:AnyObject]
             
             let name = key as! String
-            let lat = coor["Lat"] as! Int
-            let long = coor["Long"] as! Int
+            let lat = coor["Lat"] as! Double
+            let long = coor["Long"] as! Double
             let newDestination = Destination(name: name, lat: lat, long: long)
             destinations.append(newDestination)
-            print(destinations.count)
         }
     }
     
@@ -61,7 +60,6 @@ class HomeViewController: UIViewController {
     func getDestinations() -> NSDictionary {
         let parser = DestinationJsonParser()
         let destinationJson = parser.parsedDestinationJSON
-        print(destinationJson.count)
         
         return destinationJson
     }
