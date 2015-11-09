@@ -13,5 +13,5 @@ class TabBarController: UITabBarController {
     
     var destinations: [Destination]?
     var myLocation: CLLocation?
-    var myMinutes: Float?
+    var myMinutes: Int?
 }

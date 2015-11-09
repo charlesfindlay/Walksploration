@@ -16,7 +16,7 @@ class HomeViewController: UIViewController {
     
     var destinations: [Destination] = []
     let myLocation = CLLocation(latitude: 42.335890, longitude: -83.0499)
-    var myMinutes: Float!
+    var myMinutes = 10
     
     
     override func viewWillAppear(animated: Bool) {
@@ -52,7 +52,8 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func chooseMinutesSlider(sender: AnyObject) {
-        myMinutes = round(sliderOutlet.value)
+        let sliderMinutes = sliderOutlet.value
+        myMinutes = Int(sliderMinutes)
         numberMinutesLabel.text = String(myMinutes)
     }
     

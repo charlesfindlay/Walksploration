@@ -21,7 +21,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     var routePolyline: GMSPolyline!
     var destinations: [Destination]!
     var myLocation: CLLocation?
-    var myMinutes: Float?
+    var myMinutes: Int?
     var choosenDestination: CLLocation?
     
     @IBOutlet weak var mapViewContainer: UIView!
@@ -35,8 +35,12 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         myLocation = tbvc!.myLocation
         myMinutes =  tbvc!.myMinutes
         
-        ConstrainMap()
+        print(destinations.count)
+        print(myLocation)
+        print(myMinutes)
         
+        ConstrainMap()
+        getDirectionsFromGoogle()
         
     }
 
