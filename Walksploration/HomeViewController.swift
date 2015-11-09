@@ -15,13 +15,30 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var sliderOutlet: UISlider!
     
     var detroitDestinations = NSDictionary()
+    var destinations: [Destination] = []
     
     
+    
+    override func viewWillAppear(animated: Bool) {
+        // Set destinations dictionary
+        detroitDestinations = getDestinations()
+        
+        for (key,value) in detroitDestinations {
+        
+            let coor = value as! [String:AnyObject]
+            
+            let name = key as! String
+            let lat = coor["Lat"] as! Int
+            let long = coor["Long"] as! Int
+            let newDestination = Destination(name: name, lat: lat, long: long)
+            destinations.append(newDestination)
+            print(destinations.count)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Set destinations dictionary
-        detroitDestinations = getDestinations()
+        
     }
 
     override func didReceiveMemoryWarning() {
