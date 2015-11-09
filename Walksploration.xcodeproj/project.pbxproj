@@ -14,6 +14,7 @@
 		3F15BB771BE8FA0C00E03314 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F15BB751BE8FA0C00E03314 /* LaunchScreen.storyboard */; };
 		3F17DBE31BEBB5E100F055B7 /* MapTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F17DBE21BEBB5E100F055B7 /* MapTasks.swift */; };
 		3F22ECEA1BE9240B0051324A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F22ECE91BE9240B0051324A /* MapViewController.swift */; };
+		3FEA64AA1BF0056C00D32263 /* TwitterClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEA64A91BF0056C00D32263 /* TwitterClient.swift */; };
 		3FFAC5D41BE90DA1001BD611 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFAC5D31BE90DA1001BD611 /* TabBarController.swift */; };
 		AB3E9F6F5DF534D4A5103814 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 73DEF047452D8BB9609FDCEC /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -29,6 +30,7 @@
 		3F17DBE21BEBB5E100F055B7 /* MapTasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapTasks.swift; sourceTree = "<group>"; };
 		3F22ECE61BE910370051324A /* Walksploration-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Walksploration-Bridging-Header.h"; sourceTree = "<group>"; };
 		3F22ECE91BE9240B0051324A /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		3FEA64A91BF0056C00D32263 /* TwitterClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterClient.swift; sourceTree = "<group>"; };
 		3FFAC5D31BE90DA1001BD611 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		73DEF047452D8BB9609FDCEC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8537B359299B6028CE1F09E0 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 		3F15BB6B1BE8FA0B00E03314 /* Walksploration */ = {
 			isa = PBXGroup;
 			children = (
+				3FEA64A81BF0053B00D32263 /* Utilities */,
 				3F15BB7E1BE903EA00E03314 /* Controllers */,
 				3F15BB6C1BE8FA0C00E03314 /* AppDelegate.swift */,
 				3F15BB701BE8FA0C00E03314 /* Main.storyboard */,
@@ -75,7 +78,6 @@
 				3F15BB751BE8FA0C00E03314 /* LaunchScreen.storyboard */,
 				3F15BB781BE8FA0C00E03314 /* Info.plist */,
 				3F22ECE61BE910370051324A /* Walksploration-Bridging-Header.h */,
-				3F17DBE21BEBB5E100F055B7 /* MapTasks.swift */,
 			);
 			path = Walksploration;
 			sourceTree = "<group>";
@@ -88,6 +90,15 @@
 				3F22ECE91BE9240B0051324A /* MapViewController.swift */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		3FEA64A81BF0053B00D32263 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				3F17DBE21BEBB5E100F055B7 /* MapTasks.swift */,
+				3FEA64A91BF0056C00D32263 /* TwitterClient.swift */,
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 		D3EC7E0525ABB8D6DAABA901 /* Frameworks */ = {
@@ -230,6 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FFAC5D41BE90DA1001BD611 /* TabBarController.swift in Sources */,
+				3FEA64AA1BF0056C00D32263 /* TwitterClient.swift in Sources */,
 				3F17DBE31BEBB5E100F055B7 /* MapTasks.swift in Sources */,
 				3F15BB6F1BE8FA0C00E03314 /* HomeViewController.swift in Sources */,
 				3F15BB6D1BE8FA0C00E03314 /* AppDelegate.swift in Sources */,

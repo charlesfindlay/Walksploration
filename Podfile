@@ -4,6 +4,8 @@
 # use_frameworks!
 
 pod 'GoogleMaps'
+pod 'AFNetworking'
+pod 'BDBOAuth1Manager'
 target 'Walksploration' do
 
 end

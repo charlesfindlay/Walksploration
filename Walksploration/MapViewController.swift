@@ -27,7 +27,9 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         ConstrainMap()
-        mapTasks.getDirections("42.335890,-83.0499", destination: "42.332271,-83.0468119", waypoints: nil, travelMode: "") { (status, success) -> Void in
+        // 42.335025,-83.059389 MGM Casino
+        // 42.332271,-83.0468119 campus martius
+        mapTasks.getDirections("42.335890,-83.0499", destination: "42.335025,-83.059389", waypoints: nil, travelMode: "") { (status, success) -> Void in
             if success {
                 print("Awesome Job!")
                 dispatch_async(dispatch_get_main_queue(), {
@@ -51,12 +53,12 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
             stopWatchButton.setTitle("End Walk", forState: .Normal)
             stopWatchButton.backgroundColor =  UIColor.redColor()
         } else if stopWatchButton.titleLabel?.text == "End Walk" {
-            // TODO: will need anohter if statement to check for remaining walk time. If within 15% of end time then go to Facebook push. For now just implement Facebook push.
+            // TODO: will need anothter if statement to check for remaining walk time. If within 15% of end time then go to Facebook push. For now just implement Twitter push.
             
-            let facebookAlert = UIAlertController(title: "Share with your Friends", message: "Let all your friends now about your walk on Facebook", preferredStyle: .Alert)
+            let facebookAlert = UIAlertController(title: "Share with your Friends", message: "Let all your friends now about your walk on Twitter", preferredStyle: .Alert)
             let declineAction = UIAlertAction(title: "Decline", style: .Cancel, handler: nil)
             let acceptAction = UIAlertAction(title: "Accept", style: .Default, handler: { (_) -> Void in
-                print("It's time to get the Facebook stuff working")
+                self.twitterHandler()
             })
             facebookAlert.addAction(declineAction)
             facebookAlert.addAction(acceptAction)
@@ -71,6 +73,21 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     
     
     // MARK: - Utility Methods
+    
+    func twitterHandler() {
+        
+        TwitterClient.sharedInstance.requestSerializer.removeAccessToken()
+        
+        TwitterClient.sharedInstance.fetchRequestTokenWithPath("oauth/request_token", method: "GET", callbackURL: NSURL(string: "walksplorationdetroit://oauth"), scope: nil, success: {(requestToken: BDBOAuth1Credential!) -> Void in
+            print("got the token")
+            var authURL = NSURL(string: "https://api.twitter.com/oauth/authorize?oauth_token=\(requestToken.token)")
+            UIApplication.sharedApplication().openURL(authURL!)
+            })  { (error: NSError!) -> Void in
+                print("there was an error")
+                
+        }
+        
+    }
     
     func drawRoute() {
         let route = mapTasks.overviewPolyline["points"] as! String

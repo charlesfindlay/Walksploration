@@ -129,20 +129,13 @@
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nv2-9w-WPn">
-                                <rect key="frame" x="279" y="362" width="42" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y2h-Xp-UbX">
-                                <rect key="frame" x="185" y="441" width="230" height="100"/>
+                                <rect key="frame" x="210" y="456" width="180" height="80"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.37153967199999999" green="0.73995817549999998" blue="0.33165801490000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="Pws-Pn-SZg"/>
-                                    <constraint firstAttribute="width" constant="230" id="ZEF-DN-oHr"/>
+                                    <constraint firstAttribute="height" constant="80" id="Ufg-yK-bh6"/>
+                                    <constraint firstAttribute="width" constant="180" id="zUt-p6-zbZ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <state key="normal" title="Start Walk">
@@ -152,12 +145,21 @@
                                     <action selector="stopWatchToggle:" destination="cEO-Xz-g6z" eventType="touchUpInside" id="7yU-3C-GJ4"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nv2-9w-WPn">
+                                <rect key="frame" x="279" y="415" width="42" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Y2h-Xp-UbX" firstAttribute="centerX" secondItem="WXn-Ay-rI1" secondAttribute="centerX" id="j8V-Kg-U6j"/>
-                            <constraint firstItem="l0W-SE-Km7" firstAttribute="top" secondItem="Y2h-Xp-UbX" secondAttribute="bottom" constant="10" id="nzT-N2-xUI"/>
+                            <constraint firstItem="l0W-SE-Km7" firstAttribute="top" secondItem="Y2h-Xp-UbX" secondAttribute="bottom" constant="15" id="B91-b1-i8N"/>
+                            <constraint firstItem="Y2h-Xp-UbX" firstAttribute="top" secondItem="nv2-9w-WPn" secondAttribute="bottom" constant="20" id="RdR-wL-qBK"/>
+                            <constraint firstItem="Y2h-Xp-UbX" firstAttribute="centerX" secondItem="WXn-Ay-rI1" secondAttribute="centerX" id="d4J-2u-wTe"/>
+                            <constraint firstItem="nv2-9w-WPn" firstAttribute="centerX" secondItem="WXn-Ay-rI1" secondAttribute="centerX" id="hH2-ce-cBZ"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Walk" id="2OH-Hc-8Nm"/>

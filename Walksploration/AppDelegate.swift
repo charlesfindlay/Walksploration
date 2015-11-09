@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         GMSServices.provideAPIKey(googleMapsApiKey)
         
+        
         return true
     }
 
@@ -44,6 +45,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+        TwitterClient.sharedInstance.fetchAccessTokenWithPath("oauth/access_token", method: "POST", requestToken: BDBOAuth1Credential(queryString: url.query), success: { (accessToken: BDBOAuth1Credential!) -> Void in
+            print("Got access token")
+            TwitterClient.sharedInstance.requestSerializer.saveAccessToken(accessToken)
+            
+            TwitterClient.sharedInstance.GET("1.1/account/verify_credentials.json", parameters: nil, success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
+                print("user: \(response)")
+                }, failure: nil)
+            
+            let params = ["status":"This is a test"]
+            
+            TwitterClient.sharedInstance.POST("1.1/statuses/update.json", parameters: params, success: { (AFHTTPRequestOperation, AnyObject) -> Void in
+                print("Successful Twitter post test")
+                }, failure: { (AFHTTPRequestOperation, NSError) -> Void in
+                    print("Twitter post failed")
+            })
+            
+            
+            
+            
+            
+            }) { (error: NSError!) -> Void in
+                print("Failed to receive access token")
+        }
+        
+        return true
     }
 
 
