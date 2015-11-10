@@ -14,4 +14,5 @@ class TabBarController: UITabBarController {
     var destinations: [Destination]?
     var myLocation: CLLocation?
     var myMinutes: Int?
+    var textDirections: [String] = []
 }

@@ -14,6 +14,7 @@ class MapTasks {
     
     let baseURLDirections = "https://maps.googleapis.com/maps/api/directions/json?"
     var overviewPolyline: Dictionary<NSObject, AnyObject>!
+    var mySteps: NSArray!
 
     
     
@@ -115,6 +116,7 @@ class MapTasks {
                         
                         // Do some stuff here
                         self.overviewPolyline = route["overview_polyline"] as! Dictionary<NSObject, AnyObject>
+                        self.mySteps = steps as! NSArray
                         
                         
                         dispatch_async(dispatch_get_main_queue(), {

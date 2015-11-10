@@ -23,6 +23,8 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     var myLocation: CLLocation?
     var myMinutes: Int?
     var choosenDestination: Destination?
+    var mySteps: NSArray!
+    var textDirections: [String] = []
     
     @IBOutlet weak var mapViewContainer: UIView!
     
@@ -127,6 +129,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
             if success {
                 dispatch_async(dispatch_get_main_queue(), {
                     self.drawRoute()
+                    self.getTextDirections()
                 })
                 
             } else {
@@ -145,6 +148,18 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         let path: GMSPath = GMSPath(fromEncodedPath: route)
         self.routePolyline = GMSPolyline(path: path)
         routePolyline.map = mapView
+    }
+    
+    func getTextDirections() {
+        let steps = mapTasks.mySteps
+        for step in steps {
+            if let htmlDir = step["html_instructions"] {
+                self.textDirections.append(String(htmlDir))
+            }
+        }
+        // This sets the text directions to be shared across all tabs
+        let tbvc = self.tabBarController as? TabBarController
+        tbvc?.textDirections = self.textDirections
     }
     
     
