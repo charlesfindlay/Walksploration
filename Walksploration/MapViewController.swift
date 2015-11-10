@@ -113,12 +113,18 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         guard let startLong = myLocation?.coordinate.longitude else {
             return
         }
-        let start = String(startLat) + "," + String(startLong)
-        print(start)
+        guard let endLat = choosenDestination?.location.coordinate.latitude else {
+            return
+        }
+        guard let endLong = choosenDestination?.location.coordinate.longitude else {
+            return
+        }
         
-        mapTasks.getDirections(start, destination: "42.335025,-83.059389", waypoints: nil, travelMode: "") { (status, success) -> Void in
+        let start = String(startLat) + "," + String(startLong)
+        let end = String(endLat) + "," + String(endLong)
+        
+        mapTasks.getDirections(start, destination: end, waypoints: nil, travelMode: "") { (status, success) -> Void in
             if success {
-                print("Awesome Job!")
                 dispatch_async(dispatch_get_main_queue(), {
                     self.drawRoute()
                 })
