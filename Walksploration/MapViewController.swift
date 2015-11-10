@@ -22,7 +22,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     var destinations: [Destination]!
     var myLocation: CLLocation?
     var myMinutes: Int?
-    var choosenDestination: CLLocation?
+    var choosenDestination: Destination?
     
     @IBOutlet weak var mapViewContainer: UIView!
     
@@ -34,12 +34,10 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         destinations = tbvc!.destinations
         myLocation = tbvc!.myLocation
         myMinutes =  tbvc!.myMinutes
-        
-        print(destinations.count)
-        print(myLocation)
         print(myMinutes)
         
         ConstrainMap()
+        pickADestination()
         getDirectionsFromGoogle()
         
     }
@@ -88,6 +86,23 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
                 print("there was an error")
                 
         }
+        
+    }
+    
+    
+    func pickADestination() {
+        
+        var best = 2000
+        let maximumDistance = 85.0 * 0.45 * Double(myMinutes!) // meters per minute * less half available time
+        
+        for place in destinations {
+            let difference = abs(Int(maximumDistance) - Int(place.distance))
+            if  difference < best {
+                best = difference
+                choosenDestination = place
+            }
+        }
+        print(choosenDestination?.name)
         
     }
     

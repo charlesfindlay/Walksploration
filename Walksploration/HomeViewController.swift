@@ -16,12 +16,13 @@ class HomeViewController: UIViewController {
     
     var destinations: [Destination] = []
     let myLocation = CLLocation(latitude: 42.335890, longitude: -83.0499)
-    var myMinutes = 10
+    var myMinutes = 1
     
     
     override func viewWillAppear(animated: Bool) {
         // Set destinations dictionary
         let detroitDestinations = getDestinations()
+        numberMinutesLabel.text = String(myMinutes)
         
         for (key,value) in detroitDestinations {
         
