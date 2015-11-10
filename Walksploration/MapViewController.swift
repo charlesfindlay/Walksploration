@@ -34,7 +34,6 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         destinations = tbvc!.destinations
         myLocation = tbvc!.myLocation
         myMinutes =  tbvc!.myMinutes
-        print(myMinutes)
         
         ConstrainMap()
         pickADestination()
@@ -102,14 +101,22 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
                 choosenDestination = place
             }
         }
-        print(choosenDestination?.name)
         
     }
     
     
     func getDirectionsFromGoogle() {
         
-        mapTasks.getDirections("42.335890,-83.0499", destination: "42.335025,-83.059389", waypoints: nil, travelMode: "") { (status, success) -> Void in
+        guard let startLat = myLocation?.coordinate.latitude else {
+            return
+        }
+        guard let startLong = myLocation?.coordinate.longitude else {
+            return
+        }
+        let start = String(startLat) + "," + String(startLong)
+        print(start)
+        
+        mapTasks.getDirections(start, destination: "42.335025,-83.059389", waypoints: nil, travelMode: "") { (status, success) -> Void in
             if success {
                 print("Awesome Job!")
                 dispatch_async(dispatch_get_main_queue(), {
