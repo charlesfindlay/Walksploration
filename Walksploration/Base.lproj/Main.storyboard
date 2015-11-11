@@ -92,10 +92,10 @@
             </objects>
             <point key="canvasLocation" x="1013" y="989"/>
         </scene>
-        <!--Previous-->
+        <!--Directions-->
         <scene sceneID="llg-8R-vlt">
             <objects>
-                <viewController id="3Cr-Fe-0y8" sceneMemberID="viewController">
+                <viewController id="3Cr-Fe-0y8" customClass="TextDirectionsViewController" customModule="Walksploration" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyh-YR-eIl"/>
                         <viewControllerLayoutGuide type="bottom" id="0sO-ON-ogP"/>
@@ -103,16 +103,42 @@
                     <view key="view" contentMode="scaleToFill" id="oHv-zQ-Gcv">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ML3-Ws-Auq">
+                                <rect key="frame" x="-13" y="49" width="600" height="487"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="directionTextCell" id="K2s-hh-MNE">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="K2s-hh-MNE" id="Uzi-so-PF8">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <animations/>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="3Cr-Fe-0y8" id="rRa-8E-jRw"/>
+                                    <outlet property="delegate" destination="3Cr-Fe-0y8" id="BWr-aM-9jM"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Previous" id="ldy-8x-j17"/>
+                    <tabBarItem key="tabBarItem" title="Directions" id="ldy-8x-j17"/>
+                    <connections>
+                        <outlet property="textDirectionsTable" destination="ML3-Ws-Auq" id="gFX-Np-6qo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CSU-S6-a4i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2525" y="1362"/>
         </scene>
-        <!--Walk-->
+        <!--Map-->
         <scene sceneID="oky-XM-upp">
             <objects>
                 <viewController id="cEO-Xz-g6z" customClass="MapViewController" customModule="Walksploration" customModuleProvider="target" sceneMemberID="viewController">
@@ -162,7 +188,7 @@
                             <constraint firstItem="nv2-9w-WPn" firstAttribute="centerX" secondItem="WXn-Ay-rI1" secondAttribute="centerX" id="hH2-ce-cBZ"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Walk" id="2OH-Hc-8Nm"/>
+                    <tabBarItem key="tabBarItem" title="Map" id="2OH-Hc-8Nm"/>
                     <connections>
                         <outlet property="mapViewContainer" destination="Wjw-f6-Saj" id="Kh4-9c-hcs"/>
                         <outlet property="stopWatchButton" destination="Y2h-Xp-UbX" id="m85-eT-Wm9"/>

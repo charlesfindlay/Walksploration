@@ -154,7 +154,10 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         let steps = mapTasks.mySteps
         for step in steps {
             if let htmlDir = step["html_instructions"] {
-                self.textDirections.append(String(htmlDir))
+                guard let unwrapped = htmlDir else {
+                    return
+                }
+                self.textDirections.append(String(unwrapped))
             }
         }
         // This sets the text directions to be shared across all tabs

@@ -18,6 +18,7 @@
 		3FEA64AC1BF0F37D00D32263 /* DestinationJsonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEA64AB1BF0F37D00D32263 /* DestinationJsonParser.swift */; };
 		3FEA64AE1BF0F6F000D32263 /* detroitDestinations.JSON in Resources */ = {isa = PBXBuildFile; fileRef = 3FEA64AD1BF0F6F000D32263 /* detroitDestinations.JSON */; };
 		3FEA64B11BF0FCED00D32263 /* Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEA64B01BF0FCED00D32263 /* Destination.swift */; };
+		3FEA64B31BF2B89000D32263 /* TextDirectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEA64B21BF2B89000D32263 /* TextDirectionsViewController.swift */; };
 		3FFAC5D41BE90DA1001BD611 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFAC5D31BE90DA1001BD611 /* TabBarController.swift */; };
 		AB3E9F6F5DF534D4A5103814 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 73DEF047452D8BB9609FDCEC /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -37,6 +38,7 @@
 		3FEA64AB1BF0F37D00D32263 /* DestinationJsonParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DestinationJsonParser.swift; sourceTree = "<group>"; };
 		3FEA64AD1BF0F6F000D32263 /* detroitDestinations.JSON */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = detroitDestinations.JSON; sourceTree = "<group>"; };
 		3FEA64B01BF0FCED00D32263 /* Destination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Destination.swift; sourceTree = "<group>"; };
+		3FEA64B21BF2B89000D32263 /* TextDirectionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextDirectionsViewController.swift; sourceTree = "<group>"; };
 		3FFAC5D31BE90DA1001BD611 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		73DEF047452D8BB9609FDCEC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8537B359299B6028CE1F09E0 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				3F15BB6E1BE8FA0C00E03314 /* HomeViewController.swift */,
 				3FFAC5D31BE90DA1001BD611 /* TabBarController.swift */,
 				3F22ECE91BE9240B0051324A /* MapViewController.swift */,
+				3FEA64B21BF2B89000D32263 /* TextDirectionsViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			files = (
 				3FFAC5D41BE90DA1001BD611 /* TabBarController.swift in Sources */,
 				3FEA64AA1BF0056C00D32263 /* TwitterClient.swift in Sources */,
+				3FEA64B31BF2B89000D32263 /* TextDirectionsViewController.swift in Sources */,
 				3FEA64B11BF0FCED00D32263 /* Destination.swift in Sources */,
 				3F17DBE31BEBB5E100F055B7 /* MapTasks.swift in Sources */,
 				3FEA64AC1BF0F37D00D32263 /* DestinationJsonParser.swift in Sources */,
