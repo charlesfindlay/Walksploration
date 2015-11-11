@@ -95,24 +95,21 @@ class MapTasks {
                         }
                         
                         let route = directionResults[0]
-                        print("route nodes")
-                        print(route.count)
+                        
                         
                         guard let legs = route["legs"] else {
                             print("no route legs")
                             return
                         }
                         
-                        print("leg nodes")
-                        print(legs!.count)
+                        
                         
                         guard let steps = legs![0]["steps"] else {
                             print("no route leg steps")
                             return
                         }
                         
-                        print("step nodes")
-                        print(steps!.count)
+
                         
                         // Do some stuff here
                         self.overviewPolyline = route["overview_polyline"] as! Dictionary<NSObject, AnyObject>

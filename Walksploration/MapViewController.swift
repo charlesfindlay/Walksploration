@@ -14,6 +14,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     
 
     
+    @IBOutlet weak var destinationLabelOutlet: UILabel!
     @IBOutlet weak var stopWatchButton: UIButton!
     
     var mapView: GMSMapView!
@@ -29,6 +30,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     @IBOutlet weak var mapViewContainer: UIView!
     
 
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -103,7 +105,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
                 choosenDestination = place
             }
         }
-        
+        destinationLabelOutlet.text = choosenDestination?.name
     }
     
     

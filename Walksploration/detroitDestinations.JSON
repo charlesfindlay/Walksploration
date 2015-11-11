@@ -7,6 +7,36 @@
 	"Campus Martius": {
 		"Lat": 42.332271,
 		"Long": -83.0468119
+	},
+
+	"Cobo Center": {
+		"Lat": 42.3294123,
+		"Long": -83.0474101
+	},
+
+	"Rivard Plaza": {
+		"Lat": 42.330356,
+		"Long": -83.031865
+	},
+
+	"Masonic Temple Theater": {
+		"Lat": 42.341748,
+		"Long": -83.0602743
+	},
+
+	"Lafayette Park": {
+		"Lat": 42.3417371,
+		"Long": -83.0359527
+	},
+
+	"Murphy Playlot": {
+		"Lat": 42.3293656,
+		"Long": -83.0618629
+	},
+
+	"Cass Park": {
+		"Lat": 42.3403468,
+		"Long": -83.0613314
 	}
 
 

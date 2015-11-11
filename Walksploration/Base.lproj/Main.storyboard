@@ -32,14 +32,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="qr3-HO-B7g">
-                                <rect key="frame" x="180" y="285" width="232" height="31"/>
-                                <animations/>
-                                <connections>
-                                    <action selector="chooseMinutesSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="q97-ou-j5K"/>
-                                </connections>
-                            </slider>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minutes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DTA-H0-Xu2">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Minutes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DTA-H0-Xu2">
                                 <rect key="frame" x="270" y="367" width="61" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -55,13 +48,23 @@
                                     <action selector="findDestinationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c15-Rx-q9o"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XPf-Cs-lWC">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XPf-Cs-lWC">
                                 <rect key="frame" x="279" y="338" width="42" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="60" translatesAutoresizingMaskIntoConstraints="NO" id="qr3-HO-B7g">
+                                <rect key="frame" x="150" y="285" width="300" height="31"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="tez-cL-O7l"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="chooseMinutesSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="q97-ou-j5K"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -69,16 +72,15 @@
                             <constraint firstItem="K30-xg-7l8" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="7eh-JD-T6w"/>
                             <constraint firstItem="K30-xg-7l8" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="DIN-bZ-JMe"/>
                             <constraint firstItem="3bq-iT-R24" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Fmd-ee-iv9"/>
+                            <constraint firstItem="qr3-HO-B7g" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Gve-Cr-01Z"/>
                             <constraint firstItem="DTA-H0-Xu2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="InY-Q4-3k1"/>
                             <constraint firstItem="XPf-Cs-lWC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Sl1-Fy-xQA"/>
                             <constraint firstItem="fQF-gw-veS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Zbs-YE-YPV"/>
-                            <constraint firstItem="qr3-HO-B7g" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="gMh-ep-ZPh"/>
                             <constraint firstItem="K30-xg-7l8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="gwd-5O-xcK"/>
                             <constraint firstItem="DTA-H0-Xu2" firstAttribute="top" secondItem="XPf-Cs-lWC" secondAttribute="bottom" constant="8" id="hNM-hV-SbT"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fQF-gw-veS" secondAttribute="bottom" constant="108" id="iL1-pu-Nai"/>
                             <constraint firstItem="fQF-gw-veS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iL5-64-Ii1"/>
-                            <constraint firstItem="XPf-Cs-lWC" firstAttribute="top" secondItem="qr3-HO-B7g" secondAttribute="bottom" constant="23" id="tsH-XO-LTZ"/>
-                            <constraint firstItem="qr3-HO-B7g" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zl8-13-WNt"/>
+                            <constraint firstItem="qr3-HO-B7g" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="tf0-dz-vuO"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ppy-hB-9PC"/>
@@ -171,9 +173,13 @@
                                     <action selector="stopWatchToggle:" destination="cEO-Xz-g6z" eventType="touchUpInside" id="7yU-3C-GJ4"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nv2-9w-WPn">
-                                <rect key="frame" x="279" y="415" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nv2-9w-WPn">
+                                <rect key="frame" x="180" y="399" width="240" height="37"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="g0P-UD-YaG"/>
+                                    <constraint firstAttribute="height" constant="37" id="tei-8J-pAr"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -190,6 +196,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" id="2OH-Hc-8Nm"/>
                     <connections>
+                        <outlet property="destinationLabelOutlet" destination="nv2-9w-WPn" id="yG4-Lw-RSn"/>
                         <outlet property="mapViewContainer" destination="Wjw-f6-Saj" id="Kh4-9c-hcs"/>
                         <outlet property="stopWatchButton" destination="Y2h-Xp-UbX" id="m85-eT-Wm9"/>
                     </connections>

@@ -53,11 +53,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("Got access token")
             TwitterClient.sharedInstance.requestSerializer.saveAccessToken(accessToken)
             
-            TwitterClient.sharedInstance.GET("1.1/account/verify_credentials.json", parameters: nil, success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
-                print("user: \(response)")
-                }, failure: nil)
             
-            let params = ["status":"This is a test"]
+            let params = ["status":"I finished a walk with #walksploration #Detroit"]
             
             TwitterClient.sharedInstance.POST("1.1/statuses/update.json", parameters: params, success: { (AFHTTPRequestOperation, AnyObject) -> Void in
                 print("Successful Twitter post test")
