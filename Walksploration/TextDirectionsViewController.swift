@@ -10,7 +10,7 @@ import UIKit
 
 class TextDirectionsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    
+     
     @IBOutlet weak var textDirectionsTable: UITableView!
     
     var textDirections: [String] = []

@@ -42,7 +42,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         ConstrainMap()
         pickADestination()
         getDirectionsFromGoogle()
-        
+        addMapMarkers()
     }
 
     override func didReceiveMemoryWarning() {
@@ -96,7 +96,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     func pickADestination() {
         
         var best = 2000
-        let maximumDistance = 85.0 * 0.45 * Double(myMinutes!) // meters per minute * less half available time
+        let maximumDistance = 55.0 * 0.45 * Double(myMinutes!) // meters per minute * less half available time
         
         for place in destinations {
             let difference = abs(Int(maximumDistance) - Int(place.distance))
@@ -167,6 +167,23 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         tbvc?.textDirections = self.textDirections
     }
     
+    func addMapMarkers() {
+        
+        let startMarker = GMSMarker()
+        startMarker.position = CLLocationCoordinate2DMake((myLocation?.coordinate.latitude)!, (myLocation?.coordinate.longitude)!)
+        startMarker.title = "Start"
+        startMarker.snippet = "Grand Circus"
+        startMarker.icon = GMSMarker.markerImageWithColor(UIColor.redColor())
+        startMarker.map = mapView
+        
+        let endMarker = GMSMarker()
+        endMarker.position = CLLocationCoordinate2DMake((choosenDestination?.location.coordinate.latitude)!, (choosenDestination?.location.coordinate.longitude)!)
+        endMarker.title = "Destination"
+        endMarker.snippet = "\((choosenDestination?.name)!)"
+        endMarker.icon = GMSMarker.markerImageWithColor(UIColor.greenColor())
+        endMarker.map = mapView
+    }
+    
     
     func ConstrainMap() {
         
@@ -177,11 +194,6 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         self.mapViewContainer = mapView
         self.view.addSubview(mapView)
         
-        let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2DMake(42.335890, -83.0499)
-        marker.title = "Start"
-        marker.snippet = "Grand Circus"
-        marker.map = mapView
         
         mapViewContainer.backgroundColor = UIColor(red: 135/255, green: 222/255, blue: 212/255, alpha: 1)
         // add subview before adding constraints
