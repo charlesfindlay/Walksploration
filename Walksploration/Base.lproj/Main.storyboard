@@ -37,7 +37,7 @@
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="Find a Destination">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
                                     <action selector="findDestinationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c15-Rx-q9o"/>
@@ -54,8 +54,8 @@
                                 <rect key="frame" x="148" y="362" width="304" height="31"/>
                                 <animations/>
                                 <color key="minimumTrackTintColor" red="0.17426506829999999" green="1" blue="0.049859686450000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="maximumTrackTintColor" red="1" green="0.053935132869999999" blue="0.0857858076" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="thumbTintColor" red="1" green="0.053935132869999999" blue="0.0857858076" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="maximumTrackTintColor" red="0.89759474992752075" green="0.92125195264816284" blue="0.22226437926292419" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="thumbTintColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="chooseMinutesSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="q97-ou-j5K"/>
                                 </connections>
