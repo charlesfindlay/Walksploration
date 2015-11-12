@@ -18,74 +18,88 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="How long do you want to walk?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3bq-iT-R24">
-                                <rect key="frame" x="182" y="221" width="236" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How long do you want to walk?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3bq-iT-R24">
+                                <rect key="frame" x="182" y="289" width="236" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Minutes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DTA-H0-Xu2">
-                                <rect key="frame" x="270" y="367" width="61" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Minutes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DTA-H0-Xu2">
+                                <rect key="frame" x="270" y="0.0" width="61" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fQF-gw-veS">
-                                <rect key="frame" x="192" y="426" width="208" height="66"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fQF-gw-veS">
+                                <rect key="frame" x="216" y="476" width="169" height="38"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="Find a Destination"/>
+                                <state key="normal" title="Find a Destination">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="findDestinationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c15-Rx-q9o"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XPf-Cs-lWC">
-                                <rect key="frame" x="279" y="338" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XPf-Cs-lWC">
+                                <rect key="frame" x="279" y="-29" width="42" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="60" translatesAutoresizingMaskIntoConstraints="NO" id="qr3-HO-B7g">
-                                <rect key="frame" x="150" y="285" width="300" height="31"/>
+                            <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="60" translatesAutoresizingMaskIntoConstraints="NO" id="qr3-HO-B7g">
+                                <rect key="frame" x="148" y="362" width="304" height="31"/>
                                 <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="tez-cL-O7l"/>
-                                </constraints>
+                                <color key="minimumTrackTintColor" red="0.17426506829999999" green="1" blue="0.049859686450000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="maximumTrackTintColor" red="1" green="0.053935132869999999" blue="0.0857858076" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="thumbTintColor" red="1" green="0.053935132869999999" blue="0.0857858076" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="chooseMinutesSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="q97-ou-j5K"/>
                                 </connections>
                             </slider>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Walksploration" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K30-xg-7l8">
-                                <rect key="frame" x="20" y="84" width="560" height="47"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Minutes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ity-Ko-chn">
+                                <rect key="frame" x="270" y="447" width="61" height="21"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="30"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Wv-ma-oFC">
+                                <rect key="frame" x="266" y="400" width="69" height="34"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Skyline-Detroit2---320-x137" translatesAutoresizingMaskIntoConstraints="NO" id="pc8-MT-E9U">
+                                <rect key="frame" x="140" y="64" width="320" height="137"/>
+                                <animations/>
+                            </imageView>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.396078431372549" green="0.51764705882352935" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="K30-xg-7l8" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="7eh-JD-T6w"/>
-                            <constraint firstItem="K30-xg-7l8" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="DIN-bZ-JMe"/>
-                            <constraint firstItem="3bq-iT-R24" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Fmd-ee-iv9"/>
-                            <constraint firstItem="qr3-HO-B7g" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Gve-Cr-01Z"/>
-                            <constraint firstItem="DTA-H0-Xu2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="InY-Q4-3k1"/>
-                            <constraint firstItem="XPf-Cs-lWC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Sl1-Fy-xQA"/>
-                            <constraint firstItem="fQF-gw-veS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Zbs-YE-YPV"/>
-                            <constraint firstItem="K30-xg-7l8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="gwd-5O-xcK"/>
-                            <constraint firstItem="DTA-H0-Xu2" firstAttribute="top" secondItem="XPf-Cs-lWC" secondAttribute="bottom" constant="8" id="hNM-hV-SbT"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fQF-gw-veS" secondAttribute="bottom" constant="108" id="iL1-pu-Nai"/>
-                            <constraint firstItem="fQF-gw-veS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iL5-64-Ii1"/>
-                            <constraint firstItem="qr3-HO-B7g" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="tf0-dz-vuO"/>
+                            <constraint firstItem="3bq-iT-R24" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4FO-pn-IAm"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fQF-gw-veS" secondAttribute="bottom" constant="86" id="6In-Lk-r9b"/>
+                            <constraint firstItem="3bq-iT-R24" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="E91-0b-b7W"/>
+                            <constraint firstItem="qr3-HO-B7g" firstAttribute="top" secondItem="3bq-iT-R24" secondAttribute="bottom" constant="52" id="HDW-mK-1iu"/>
+                            <constraint firstItem="fQF-gw-veS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HY9-Vq-1ts"/>
+                            <constraint firstItem="Ity-Ko-chn" firstAttribute="top" secondItem="7Wv-ma-oFC" secondAttribute="bottom" constant="13" id="KEG-Yx-WKi"/>
+                            <constraint firstItem="pc8-MT-E9U" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="NlY-Rw-bpZ"/>
+                            <constraint firstItem="pc8-MT-E9U" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="QUf-Tt-3Yg"/>
+                            <constraint firstItem="Ity-Ko-chn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="V7H-kh-kbh"/>
+                            <constraint firstItem="7Wv-ma-oFC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="a8P-Mi-p1L"/>
+                            <constraint firstItem="7Wv-ma-oFC" firstAttribute="top" secondItem="qr3-HO-B7g" secondAttribute="bottom" constant="8" id="fD5-51-xas"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pc8-MT-E9U" secondAttribute="trailing" constant="-20" id="kiX-4W-3nF"/>
+                            <constraint firstItem="qr3-HO-B7g" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="maF-rY-WyH"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ppy-hB-9PC"/>
                     <connections>
-                        <outlet property="numberMinutesLabel" destination="XPf-Cs-lWC" id="822-6y-Wv5"/>
+                        <outlet property="numberMinutesLabel" destination="7Wv-ma-oFC" id="lSy-kE-glq"/>
                         <outlet property="sliderOutlet" destination="qr3-HO-B7g" id="CQ5-03-tKJ"/>
                         <segue destination="rtM-vI-SPU" kind="push" identifier="getWalkingSegue" id="qac-TO-a8f"/>
                     </connections>
@@ -247,6 +261,7 @@
     </scenes>
     <resources>
         <image name="Google Earth" width="25" height="25"/>
+        <image name="Skyline-Detroit2---320-x137" width="320" height="137"/>
         <image name="Waypoint Map" width="25" height="25"/>
     </resources>
 </document>
