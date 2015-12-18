@@ -32,7 +32,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fQF-gw-veS">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fQF-gw-veS">
                                 <rect key="frame" x="216" y="476" width="169" height="38"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
@@ -83,7 +83,6 @@
                         <color key="backgroundColor" red="0.396078431372549" green="0.51764705882352935" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="3bq-iT-R24" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4FO-pn-IAm"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fQF-gw-veS" secondAttribute="bottom" constant="86" id="6In-Lk-r9b"/>
                             <constraint firstItem="3bq-iT-R24" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="E91-0b-b7W"/>
                             <constraint firstItem="qr3-HO-B7g" firstAttribute="top" secondItem="3bq-iT-R24" secondAttribute="bottom" constant="52" id="HDW-mK-1iu"/>
                             <constraint firstItem="fQF-gw-veS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HY9-Vq-1ts"/>
@@ -93,6 +92,7 @@
                             <constraint firstItem="Ity-Ko-chn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="V7H-kh-kbh"/>
                             <constraint firstItem="7Wv-ma-oFC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="a8P-Mi-p1L"/>
                             <constraint firstItem="7Wv-ma-oFC" firstAttribute="top" secondItem="qr3-HO-B7g" secondAttribute="bottom" constant="8" id="fD5-51-xas"/>
+                            <constraint firstItem="fQF-gw-veS" firstAttribute="top" secondItem="Ity-Ko-chn" secondAttribute="bottom" constant="8" id="gce-jp-zQz"/>
                             <constraint firstAttribute="trailingMargin" secondItem="pc8-MT-E9U" secondAttribute="trailing" constant="-20" id="kiX-4W-3nF"/>
                             <constraint firstItem="qr3-HO-B7g" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="maF-rY-WyH"/>
                         </constraints>

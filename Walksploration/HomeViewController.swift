@@ -36,7 +36,7 @@ class HomeViewController: UIViewController {
             newDestination.distance = getDistance(myLocation, nextDestination: newLocation)
             destinations.append(newDestination)
         }
-    }
+    } 
     
     override func viewDidLoad() {
         super.viewDidLoad()
